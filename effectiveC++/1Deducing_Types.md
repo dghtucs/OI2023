@@ -235,6 +235,21 @@ These are just a few examples of types that can undergo decay into pointers in c
 
 # Item 2: Understand auto type deduction.
 
+![Alt text](image-5.png)
+
+
+# Item 3: Understand decltype
+![Alt text](image-6.png)
+
+decltype should use with auto
+![Alt text](image-7.png)
+
+
+
+
+
+
+
 
 
 
