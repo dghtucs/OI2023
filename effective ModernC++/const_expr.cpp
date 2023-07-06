@@ -1,5 +1,5 @@
 #include<iostream>
-
+using ll = long long;
 template<typename T,std::size_t N>
 std::size_t arrsize(T (&)[N])
 {
@@ -13,6 +13,7 @@ auto authAndAccess(Container& c, Index i) // not quite
 }
 int main()
 {
+    ll b;
     int a[9];
     std::cout << arrsize(a) << std::endl;
 }
