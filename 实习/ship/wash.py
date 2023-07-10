@@ -1,7 +1,7 @@
 import re
 
 # 读取文本文件内容
-with open("5.txt", "r", encoding="utf-8") as file:
+with open("6.txt", "r", encoding="utf-8") as file:
     text = file.read()
 
 
@@ -17,5 +17,5 @@ cleaned_text = cleaned_text.replace(' ','')
 cleaned_text = re.sub(r"\n\s*\n","",cleaned_text)
 
 
-with open("output5.txt", "a", encoding="utf-8") as file:
+with open("output6.txt", "w", encoding="utf-8") as file:
     file.write(cleaned_text)

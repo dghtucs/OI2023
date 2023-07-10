@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
 }
-url = "https://www.cnss.com.cn/html/cbzsk/index_6.html"
+url = "https://www.guanwuxiaoer.com/forum-chukou-1.html"
 
 def get_all_links(url):
     response = requests.get(url,headers=headers)
@@ -26,7 +26,7 @@ def get_all_links(url):
 all_links = get_all_links(url)
 
 
-f = open("5.txt","a")
+f = open("6.txt","a")
 import sys
 sys.stdout = f
 
@@ -35,7 +35,7 @@ sys.stdout = f
 for link in all_links:
     response = requests.get(link, headers=headers)
     soup = BeautifulSoup(response.content, 'html.parser')
-    all_p = soup.find_all('div',attrs={"id":"content"})
+    all_p = soup.find_all('td')
     for p in all_p:
         print(p)
 
