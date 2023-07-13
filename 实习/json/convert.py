@@ -47,15 +47,19 @@ for line in lines:
 
 
 
-
-# 处理最后一个问题的信息
-if question != '':
-    data = {
-        "input": input_content,
-        "<ans>": answer
-    }
-    json_objects.append(data)
-
-# 写入输出文件
-with open('output2.json', 'w', encoding='utf-8') as file:
-    json.dump(json_objects, file, ensure_ascii=False, indent=4)
+#
+# # 处理最后一个问题的信息
+# if question != '':
+#     data = {
+#         "input": input_content,
+#         "<ans>": answer
+#     }
+#     json_objects.append(data)
+#
+# # 写入输出文件
+# with open('output2.json', 'w', encoding='utf-8') as file:
+#     json.dump(json_objects, file, ensure_ascii=False, indent=4)
+#
+#
+with open('output2.json',"r") as f:
+    json.load(f)
