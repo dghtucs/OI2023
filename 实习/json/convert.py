@@ -1,7 +1,7 @@
 import json
 
 # 打开输入文件
-with open('exam.txt', 'r', encoding='utf-8') as file:
+with open('all_all.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
 # 初始化列表来保存所有的JSON对象
@@ -59,7 +59,7 @@ if question != '':
     json_objects.append(data)
 
 # 写入输出文件
-with open('output3.json', 'w', encoding='utf-8') as file:
+with open('output5.json', 'w', encoding='utf-8') as file:
     json.dump(json_objects, file, ensure_ascii=False, indent=4)
 
 

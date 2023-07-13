@@ -3,7 +3,7 @@ import re
 import random
 
 
-with open('resre_option_only.json', 'r') as file:
+with open('out5.json', 'r') as file:
     json_data = json.load(file)
 
 
@@ -12,16 +12,28 @@ for item in json_data:
 
 
     match_a_b = re.search(r'A、(.*?)B、', item['input'])
-    content_a_b = match_a_b.group(1)
+    if match_a_b:
+        content_a_b = match_a_b.group(1)
+    else:
+        continue
 
     match_b_c = re.search(r'B、(.*?)C、', item['input'])
-    content_b_c = match_b_c.group(1)
+    if match_b_c:
+        content_b_c = match_b_c.group(1)
+    else:
+        continue
 
     match_c_d = re.search(r'C、(.*?)D、', item['input'])
-    content_c_d = match_c_d.group(1)
+    if match_c_d:
+        content_c_d = match_c_d.group(1)
+    else:
+        continue
 
-    match_d = re.search(r'D、(.*?) ', item['input'])
-    content_d = match_d.group(1)
+    match_d = re.search(r'D、(.*?)$', item['input'])
+    if match_d:
+        content_d = match_d.group(1)
+    else:
+        continue
 
 
     options = [content_b_c,content_c_d,content_d,content_a_b]
@@ -57,5 +69,5 @@ for item in json_data:
     ans = ''.join(sorted(ans))
     item['<ans>'] = ans
 
-with open('shuffled.json', 'w') as file:
+with open('s3.json', 'w') as file:
     json.dump(json_data, file, ensure_ascii=False, indent=4)
