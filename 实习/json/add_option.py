@@ -3,7 +3,7 @@ import re
 import random
 
 
-with open('tiankong.json', 'r') as file:
+with open('all.json', 'r') as file:
     json_data = json.load(file)
 
 
@@ -11,12 +11,18 @@ with open('tiankong.json', 'r') as file:
 
 
 for item in json_data:
-    pattern = r"A、(.*?)$"
-    item['input'] = re.sub(pattern,' ',item['input'])
+    pattern = r"A、"
+    item['input'] = re.sub(pattern,' A、',item['input'])
+    pattern = r"B、"
+    item['input'] = re.sub(pattern,' B、',item['input'])
+    pattern = r"C、"
+    item['input'] = re.sub(pattern,' C、',item['input'])
+    pattern = r"D、"
+    item['input'] = re.sub(pattern,' D、',item['input'])
 
 
 
-with open('tiankong1.json', 'w') as file:
+with open('all1.json', 'w') as file:
     json.dump(json_data, file, ensure_ascii=False, indent=4)
 
 
