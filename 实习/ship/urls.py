@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
 }
-url = "https://www.guanwuxiaoer.com/forum-chukou-1.html"
+url = "http://172.25.18.152:8180/etudesenfrance/dyn/public/confirmerCompte.html?ticket=4470a1a3-8442-4649-9ca9-efc561c31691"
 
 def get_all_links(url):
     response = requests.get(url,headers=headers)
@@ -26,9 +26,9 @@ def get_all_links(url):
 all_links = get_all_links(url)
 
 
-f = open("6.txt","a")
-import sys
-sys.stdout = f
+# f = open("6.txt","a")
+# import sys
+# sys.stdout = f
 
 
 
