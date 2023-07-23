@@ -32,7 +32,7 @@ int main()
         cout << p->data << " -> ";
         p = p->next;
     }
-    
+    cout << p->data;
     
 }
 
